@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="box">
+        <div class="box1">
+            <button onclick="addElement()">Add Elements to Cart</button>
+            <br><br>
+            <div id="popup" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closePopup()">&times;</span>
+                <h3>Add Product to Cart</h3>
+                <input type="text" id="productInput" placeholder="Enter product name"><br><br>
+                <input type="number" id="quantityInput" placeholder="Enter quantity"><br><br>
+                <button onclick="confirmAdd()">Add</button>
+                <button onclick="closePopup()">Cancel</button>
+            </div>
+            </div>
+
+        </div>
+        <div id="popup2" class="box2">
+            <button onclick="viewelement()">View Elements in Cart</button>
+            <br><br>
+            <div class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closePopup2()">&times;</span>
+                    <h3>Added Products</h3>
+                    <table id="carttable">
+                        <thead>
+                            <tr>
+                        <th>Product</th>
+                        <th>Quantity</th>
+                        </tr>
+                        </thead>
+                        <tbody id="cartBody">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="box4">
+            <button id="b4" onclick="removeelement()">Remove Element</button>
+            <br><br>
+            <div id="popup3" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closePopup3()">&times;</span>
+                <h3>Element to be Removed From Cart</h3>
+                <input type="text" id="product" placeholder="Enter product name to be Removed"><br><br>
+                <input type="number" id="quantity" placeholder="Enter quantity to reduce"><br><br>
+                <button onclick="confirmRemove()">Remove</button>
+                <button onclick="closePopup3()">Cancel</button>
+            </div>
+            </div>
+        </div>
+    </div>
+    <div id="addon"></div>
+    <script src="cartss.js"></script>
+</body>
+</html>
